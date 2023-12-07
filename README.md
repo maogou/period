@@ -4,7 +4,7 @@ Period
 [![Author](http://img.shields.io/badge/author-@maogou-blue.svg?style=flat-square)](https://github.com/maogou)
 [![Latest Version](https://img.shields.io/github/release/maogou/period.svg?style=flat-square)](https://github.com/maogou/period/releases)
 [![Build Status](https://travis-ci.com/maogou/period.svg?branch=master)](https://travis-ci.com/maogou/period)
-[![GoDoc](https://godoc.org/github.com/maogou/period?status.svg)](https://pkg.go.dev/github.com/maogou/period)
+[![GoDoc](https://pkg.go.dev/github.com/maogou/period?status.svg)](https://pkg.go.dev/github.com/maogou/period)
 [![License](https://img.shields.io/github/license/maogou/period.svg)](https://github.com/maogou/period/blob/master/LICENSE)
 
 Project Introduction
