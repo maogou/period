@@ -1,0 +1,7 @@
+.idea/*
+logs/*
+.vscode/*
+*.exe
+tmp/*
+main
+coverage.out
