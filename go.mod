@@ -1,4 +1,4 @@
-module period
+module github.com/maogou/period
 
 go 1.21.0
 

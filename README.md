@@ -4,8 +4,6 @@ Period
 [![Author](http://img.shields.io/badge/author-@maogou-blue.svg?style=flat-square)](https://github.com/maogou)
 [![Latest Version](https://img.shields.io/github/release/maogou/period.svg?style=flat-square)](https://github.com/maogou/period/releases)
 [![Build Status](https://travis-ci.com/maogou/period.svg?branch=master)](https://travis-ci.com/maogou/period)
-[![codecov](https://codecov.io/gh/maogou/period/branch/master/graph/badge.svg)](https://codecov.io/gh/maogou/period)
-[![Go Report Card](https://goreportcard.com/badge/github.com/maogou/period)](https://goreportcard.com/report/github.com/maogou/period)
 [![GoDoc](https://godoc.org/github.com/maogou/period?status.svg)](https://godoc.org/github.com/maogou/period)
 [![License](https://img.shields.io/github/license/maogou/period.svg)](https://github.com/maogou/period/blob/master/LICENSE)
 
@@ -16,7 +14,7 @@ Period is a project written in Go language and implements [thephpleague/period](
 
 > ⚠️ **Warning**: Currently, Go (1.21.x) language does not support enumeration types. If Go language supports enumeration types in future versions, we will refactor the methods in the `bounds.go` file.
 
-[中文介绍](https://github.com/maogou/period/blob/main/README.md)
+[简体中文介绍](https://github.com/maogou/period/blob/main/README_zh.md)
 
 Main Features
 -------
