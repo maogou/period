@@ -30,7 +30,7 @@ First, you need to import the Period project into your Go project. You can add t
 
 ```go
 require (
-github.com/maogou/period v1.0.0
+    github.com/maogou/period v1.0.0
 )
 ```
 
@@ -40,26 +40,31 @@ Then, you can use the following code to create a time period:
 package main
 
 import (
-	"github.com/maogou/period"
+	"fmt"
 	"time"
+	
+	"github.com/maogou/period"
 )
 
 func main() {
-	p1 := period.Period{
-		startDate:    time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
-		endDate:      time.Date(2023, 1, 3, 0, 0, 0, 0, time.Local),
-		boundaryType: period.IncludeStartExcludeEnd,
-	}
 	
-	p2 := period.Period{
-		startDate:    time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
-		endDate:      time.Date(2023, 1, 4, 0, 0, 0, 0, time.Local),
-		boundaryType: period.IncludeStartExcludeEnd,
-	}
+	ts1 := time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local)
+	te1 := time.Date(2023, 1, 3, 0, 0, 0, 0, time.Local)
 	
-	result := p1.Union(p2)
-	fmt.Println(result)
+	p1 := period.NewDefaultPeriod(ts1, te1)
+	
+	ts2 := time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local)
+	te2 := time.Date(2023, 1, 4, 0, 0, 0, 0, time.Local)
+	p2 := period.NewDefaultPeriod(ts2, te2)
+	
+	unions := p1.Union(p2)
+	
+	for index, item := range unions.GetInterval() {
+		fmt.Println(index, ":", item.Format(time.DateTime))
+	}
+
 }
+
 ```
 
 Methods
