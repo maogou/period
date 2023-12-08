@@ -9,7 +9,7 @@ Period
 Project Introduction
 -------
 
-Period is a project written in Go language and implements [thephpleague/period](https://github.com/thephpleague/period). It is mainly used for handling and operating time periods. It provides a series of methods such as union, intersection, and difference to facilitate users to perform various operations on time periods.
+Period is a project written in Go language. It is mainly used for handling and operating time periods. It provides a series of methods such as union, intersection, and difference to facilitate users to perform various operations on time periods.
 
 > ⚠️ **Warning**: Currently, Go (1.21.x) language does not support enumeration types. If Go language supports enumeration types in future versions, we will refactor the methods in the `bounds.go` file.
 
