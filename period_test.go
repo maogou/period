@@ -2817,7 +2817,7 @@ func TestFromIsoYear(t *testing.T) {
 	}
 }
 
-func TestFormYear(t *testing.T) {
+func TestFromYear(t *testing.T) {
 	tests := []struct {
 		name         string
 		year         int
@@ -2825,7 +2825,7 @@ func TestFormYear(t *testing.T) {
 		want         Period
 	}{
 		{
-			name:         "FormYear_ValidYear",
+			name:         "FromYear_ValidYear",
 			year:         2023,
 			boundaryType: IncludeStartExcludeEnd,
 			want: Period{
@@ -2835,7 +2835,7 @@ func TestFormYear(t *testing.T) {
 			},
 		},
 		{
-			name:         "FormYear_NegativeYear",
+			name:         "FromYear_NegativeYear",
 			year:         -2023,
 			boundaryType: IncludeStartExcludeEnd,
 			want: Period{
@@ -2845,7 +2845,7 @@ func TestFormYear(t *testing.T) {
 			},
 		},
 		{
-			name:         "FormYear_ZeroYear",
+			name:         "FromYear_ZeroYear",
 			year:         0,
 			boundaryType: IncludeStartExcludeEnd,
 			want: Period{
@@ -2860,7 +2860,7 @@ func TestFormYear(t *testing.T) {
 		t.Run(
 			tt.name, func(t *testing.T) {
 				p := Period{}
-				got := p.FormYear(tt.year, tt.boundaryType)
+				got := p.FromYear(tt.year, tt.boundaryType)
 				assert.Equal(t, tt.want, got)
 			},
 		)
