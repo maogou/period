@@ -44,7 +44,7 @@ func (p Period) FromPeriod(period Period, boundaryType string) Period {
 	}
 }
 
-func (p Period) FormYear(year int, boundaryType string) Period {
+func (p Period) FromYear(year int, boundaryType string) Period {
 	return Period{
 		startDate:    time.Date(year, 1, 1, 0, 0, 0, 0, time.Local),
 		endDate:      time.Date(year+1, 1, 1, 0, 0, 0, 0, time.Local),
