@@ -36,6 +36,18 @@ func NewDefaultPeriod(startDate, endDate time.Time) Period {
 	}
 }
 
+func NewIncludeAllPeriod(startDate, endDate time.Time) Period {
+	if startDate.After(endDate) {
+		startDate, endDate = endDate, startDate
+	}
+	return Period{
+		startDate:    startDate,
+		endDate:      endDate,
+		boundaryType: IncludeAll,
+	}
+
+}
+
 func (p Period) FromPeriod(period Period, boundaryType string) Period {
 	return Period{
 		startDate:    period.startDate,
