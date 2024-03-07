@@ -99,6 +99,63 @@ func TestNewDefaultPeriod(t *testing.T) {
 	}
 }
 
+func TestNewIncludeAllPeriod(t *testing.T) {
+	type args struct {
+		startDate time.Time
+		endDate   time.Time
+	}
+	tests := []struct {
+		name string
+		args args
+		want Period
+	}{
+		{
+			name: "NewIncludeAllPeriod_ValidDates",
+			args: args{
+				startDate: time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
+				endDate:   time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+			},
+			want: Period{
+				startDate:    time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
+				endDate:      time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				boundaryType: IncludeAll,
+			},
+		},
+		{
+			name: "NewIncludeAllPeriod_StartDateAfterEndDate",
+			args: args{
+				startDate: time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				endDate:   time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
+			},
+			want: Period{
+				startDate:    time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
+				endDate:      time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				boundaryType: IncludeAll,
+			},
+		},
+		{
+			name: "NewIncludeAllPeriod_SameStartAndEndDate",
+			args: args{
+				startDate: time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
+				endDate:   time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
+			},
+			want: Period{
+				startDate:    time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
+				endDate:      time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
+				boundaryType: IncludeAll,
+			},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(
+			tt.name, func(t *testing.T) {
+				got := NewIncludeAllPeriod(tt.args.startDate, tt.args.endDate)
+				assert.Equal(t, tt.want, got)
+			},
+		)
+	}
+}
+
 func TestBordersOnStart(t *testing.T) {
 	type args struct {
 		other Period
