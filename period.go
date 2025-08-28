@@ -11,10 +11,6 @@ type Period struct {
 }
 
 func NewPeriod(startDate, endDate time.Time, boundaryType string) Period {
-	if startDate.After(endDate) {
-		startDate, endDate = endDate, startDate
-	}
-
 	if _, ok := boundaryTypes[boundaryType]; !ok {
 		boundaryType = IncludeStartExcludeEnd
 	}
@@ -26,9 +22,6 @@ func NewPeriod(startDate, endDate time.Time, boundaryType string) Period {
 }
 
 func NewDefaultPeriod(startDate, endDate time.Time) Period {
-	if startDate.After(endDate) {
-		startDate, endDate = endDate, startDate
-	}
 	return Period{
 		startDate:    startDate,
 		endDate:      endDate,
@@ -37,9 +30,6 @@ func NewDefaultPeriod(startDate, endDate time.Time) Period {
 }
 
 func NewIncludeAllPeriod(startDate, endDate time.Time) Period {
-	if startDate.After(endDate) {
-		startDate, endDate = endDate, startDate
-	}
 	return Period{
 		startDate:    startDate,
 		endDate:      endDate,
