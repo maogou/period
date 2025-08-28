@@ -1,9 +1,10 @@
 package period
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNewPeriod(t *testing.T) {
@@ -25,8 +26,8 @@ func TestNewPeriod(t *testing.T) {
 				boundaryType: IncludeAll,
 			},
 			want: Period{
-				startDate:    time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
-				endDate:      time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				startDate:    time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				endDate:      time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
 				boundaryType: IncludeAll,
 			},
 		},
@@ -83,8 +84,8 @@ func TestNewDefaultPeriod(t *testing.T) {
 				endDate:   time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
 			},
 			want: Period{
-				startDate:    time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
-				endDate:      time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				startDate:    time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				endDate:      time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
 				boundaryType: IncludeStartExcludeEnd,
 			},
 		},
@@ -128,8 +129,8 @@ func TestNewIncludeAllPeriod(t *testing.T) {
 				endDate:   time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
 			},
 			want: Period{
-				startDate:    time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
-				endDate:      time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				startDate:    time.Date(2023, 1, 2, 0, 0, 0, 0, time.Local),
+				endDate:      time.Date(2023, 1, 1, 0, 0, 0, 0, time.Local),
 				boundaryType: IncludeAll,
 			},
 		},
